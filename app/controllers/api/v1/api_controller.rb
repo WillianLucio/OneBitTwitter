@@ -1,7 +1,8 @@
 module Api
-   module V1
-      class ApiController < ApplicationController
-         #> Métodos globais
-      end
-   end
+  module V1
+    class ApiController < ApplicationController
+      include Knock::Authenticable
+      #> Métodos globais
+    end
+  end
 end
