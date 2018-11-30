@@ -1,6 +1,5 @@
 module Api
   module V1
-    # >
     class TweetSerializer < ActiveModel::Serializer
       attributes :id, :body, :tweet_original_id, :retweets_count, :likes_count, :liked
       belongs_to :tweet_original
