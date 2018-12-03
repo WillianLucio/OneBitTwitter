@@ -23,7 +23,7 @@ module Requests
   module HeaderHelpers
     def header_with_authentication(user)
       token = Knock::AuthToken.new(payload: { sub: user.id }).token
-      { 'content-type' => 'application/json', 'Authorization' => "Bearer #{token}" }
+      { 'Authorization' => "Bearer #{token}" }
     end
 
     def header_without_authentication
