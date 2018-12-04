@@ -37,19 +37,19 @@ module Api
       end
 
       def following
-        @following = @user.following_users.paginate(page: @page, per_page: 15)
+        @following = @user.following_users.paginate(page: @page)
         render json: @following
       end
 
       def followers
-        @followers = @user.followers_by_type('User').paginate(page: @page, per_page: 15)
+        @followers = @user.followers_by_type('User').paginate(page: @page)
         render json: @followers
       end
 
       private
 
       def user_params
-        params.require(:user).permit(:name, :email, :password, :password_confirmation)
+        params.require(:user).permit(:name, :email, :password, :password_confirmation, :photo)
       end
 
       def set_user
